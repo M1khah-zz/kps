@@ -1,0 +1,25 @@
+
+  <div class="header">
+    <h1>Steps of KPS development process</h1>
+  </div>
+  <div class="container col-xs-12">
+        <div class="newstep col-xs-3">
+          <%= link_to 'New Step', new_step_path ,class: "btn btn-gradient"%>
+        </div>
+    <div class="col-xs-6">
+      <% @steps.each do |step| %>
+          <div class="step jumbotron">
+            <span><%= step.name %></span>
+            <br>
+              <%= link_to 'Edit', edit_step_path(step),class: "btn btn-gradient" %>
+              <%= link_to 'Destroy', step,class: "btn btn-gradient", method: :delete, data: { confirm: 'Are you sure?' } %>
+            </br>
+          </div>
+          <div class="arrow">
+            <span class="glyphicon glyphicon-arrow-down"></span>
+          </div>
+      <% end %>
+      </div>
+      <div class="col-xs-3">
+    </div>
+  </div>
